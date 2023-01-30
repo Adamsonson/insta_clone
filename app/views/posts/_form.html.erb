@@ -1,32 +1,35 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div class="col-xl-4 col-md-6 col-sm-8 col-10" style="margin: auto; background-color: #f8f8f8; border-radius: 6px; padding: 15px; box-shadow: 0px 0px 2px">
+  <%= form_with(model: post) do |form| %>
+    <h1>New post</h1>
+    <% if post.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div>
+      <%= form.label :decsritpion, style: "display: block" %>
+      <%= form.text_field :decsritpion, class: "form-control" %>
+    </div>
+
+    <div>
+      <%= form.label :keywords, style: "display: block" %>
+      <%= form.text_field :keywords, class: "form-control" %>
+    </div>
+
+    <div>
+      <%= form.submit class: "btn btn-primary col-12" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :decsritpion, style: "display: block" %>
-    <%= form.text_field :decsritpion %>
-  </div>
-
-  <div>
-    <%= form.label :keywords, style: "display: block" %>
-    <%= form.text_field :keywords %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
