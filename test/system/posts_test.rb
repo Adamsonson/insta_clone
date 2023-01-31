@@ -14,7 +14,7 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "New post"
 
-    fill_in "Decsritpion", with: @post.decsritpion
+    fill_in "Description", with: @post.description
     fill_in "Keywords", with: @post.keywords
     fill_in "Title", with: @post.title
     click_on "Create Post"
@@ -27,7 +27,7 @@ class PostsTest < ApplicationSystemTestCase
     visit post_url(@post)
     click_on "Edit this post", match: :first
 
-    fill_in "Decsritpion", with: @post.decsritpion
+    fill_in "Description", with: @post.description
     fill_in "Keywords", with: @post.keywords
     fill_in "Title", with: @post.title
     click_on "Update Post"
