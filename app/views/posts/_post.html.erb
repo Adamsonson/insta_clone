@@ -1,14 +1,17 @@
-<div id="<%= dom_id post %>">
+<div id="<%= dom_id post %>" class="post-container">
   <p>
     <%= post.title %>
   </p>
 
   <p>
-    <%= post.decsritpion %>
+    <%= post.description %>
   </p>
 
   <p>
     <%= post.keywords %>
   </p>
 
+  <p>
+    <%= link_to "Show this post", post %>
+  </p>
 </div>
