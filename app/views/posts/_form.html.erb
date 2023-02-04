@@ -12,6 +12,9 @@
         </p>
       <% end %>
     </div>
+    <div>
+      <%= form.text_field :user_id, type: "hidden", value: current_user.id %>
+    </div>
 
     <div>
       <%= form.label :description, style: "display: block" %>
