@@ -1,0 +1,8 @@
+<p style="color: green"><%= notice %></p>
+<div id="posts" class="text-center">
+  <% @posts.each do |post| %>
+    <% if post.user.present? && post.user.id == current_user.id %>
+      <%= render post %>
+    <% end %>
+  <% end %>
+</div>
