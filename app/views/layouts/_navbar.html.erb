@@ -18,6 +18,9 @@
         <li class="nav-item">
           <%= link_to "View My Profile", current_user, class:"nav-link"%>
         </li>
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar, style:"width: 50px; height: 50px;" %>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Sign Out", destroy_user_session_path, class:"border:none;"%>
         </li>
