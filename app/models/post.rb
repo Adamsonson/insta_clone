@@ -10,6 +10,8 @@ class Post < ApplicationRecord
 
   has_many :comments
 
+  has_many :likes
+
   before_create :randomize_id
 
   private
