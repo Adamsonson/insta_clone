@@ -12,3 +12,12 @@
 <p>
   <%= link_to post.user.email, post.user, style: "z-index" %>
 </p>
+<% if user_signed_in? %>
+  <% like = current_user.likes.find_by(post: post) %>
+  <% if like.nil? %>
+    <%= button_to "like", likes_path, params: { like: { post_id: post.id }}, method: :post%>
+  <% else %>
+    <%= button_to "Unlike", like_path(like), method: :delete %>
+  <% end %>
+<% end %>
+<p> <%= post.likes.count %> Likes </p>
