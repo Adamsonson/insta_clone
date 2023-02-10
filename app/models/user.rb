@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :likes
 
+  followability
+
   before_create :randomize_id
 
   private
