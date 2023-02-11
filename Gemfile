@@ -51,6 +51,7 @@ gem "bootsnap", require: false
 # My custom gems
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'followability', github: 'nejdetkadir/followability', branch: 'main'
+gem 'ransack'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

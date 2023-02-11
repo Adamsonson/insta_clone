@@ -8,6 +8,10 @@
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link", style:"margin-left: 20px;" %>
       </li>
+      <%= form_with url: profiles_index_path, method: :get do |form| %>
+        <%= form.search_field :query, value: params[:query], placeholder: "Search", class:"search-field" %>
+        <%= form.submit "Search", class:"btn btn-primary" %>
+      <% end %>
       <li class="nav-item">
         <%= link_to "Upload Post", new_post_path, class: "nav-link" %>
       </li>
