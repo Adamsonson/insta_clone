@@ -1,10 +1,21 @@
 <div class="row">
-  <div class="col-12 text-center" style="padding: 20px; background-color: #f2f2f2">
-    <h1> <%= @user.email %> </h1>
-    <h4> <%= @user.user_name %> </h4>
+  <div class="col-12 text-center" style="padding: 20px; background-color: #f2f2f2;">
+    <h1> <%= @user.user_name %> </h1>
+    <h4> <%= @user.email %> </h4>
     <h1> <%= @user.bio %> </h1>
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar, style:"width: 50px; height: 50px;" %>
+    <% end %>
+    <% if current_user.following?(@user) %>
+      <%= button_to "Unfollow", unfollow_path(@user)%>
+    <% elsif current_user.sent_follow_request_to?(@user) %>
+      <%= button_to "Cancel follow request", cancel_path(@user) %>
+    <% else %>
+      <% if @user.id == current_user.id %>
+      <% else %>
+        <%= button_to "Follow", follow_path(@user)%>
+      <% end %>
+    <% end %>
+
   </div>
 </div>
-<% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, style:"width: 50px; height: 50px;" %>
-<% end %>
