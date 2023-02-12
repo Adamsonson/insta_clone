@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'profiles/index'
 
   resources :likes, only: [:create, :destroy]
@@ -24,8 +25,6 @@ Rails.application.routes.draw do
 
   get 'posts/myposts'
   resources :posts
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
   root "posts#index"
 end
