@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag("post")%>
 <% if user_signed_in? %>
-  <%# if current_user.admin? %>
+  <% if current_user.admin? %>
     You are an Admin
-  <%# end %>
+  <% end %>
   <% current_user.follow_requests.each do |request| %>
     <%= request.followerable.email %> Wants to follow you
     <%= button_to "Accept", accept_path(request.followerable) %>

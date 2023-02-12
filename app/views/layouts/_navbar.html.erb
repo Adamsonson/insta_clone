@@ -19,6 +19,11 @@
         <%= link_to "About Page", home_about_path, class:"nav-link"%>
       </li>
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to "Admin Panel", rails_admin_path, class:"nav-link"%>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "View My Profile", current_user, class:"nav-link"%>
         </li>

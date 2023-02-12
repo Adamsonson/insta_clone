@@ -13,6 +13,14 @@ class User < ApplicationRecord
 
   before_create :randomize_id
 
+  enum role: [:user, :admin]
+
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :admin
+  end
+
   def unfollow(user)
     followerable_relationships.where(followable_id: user.id).destroy_all
   end
