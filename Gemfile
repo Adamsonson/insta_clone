@@ -54,6 +54,7 @@ gem 'followability', github: 'nejdetkadir/followability', branch: 'main'
 gem 'ransack'
 gem 'rails_admin', '~> 3.0.0'
 gem 'pagy'
+gem 'active_analytics'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  authenticate :user, -> (u) { u.admin? } do # Supposing there is a User#admin? method
+    mount ActiveAnalytics::Engine, at: "analytics" # http://localhost:3000/analytics
+  end
+
   get 'profiles/index'
 
   resources :likes, only: [:create, :destroy]
@@ -25,6 +30,8 @@ Rails.application.routes.draw do
 
   get 'posts/myposts'
   resources :posts
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  # Defines the root path route ("/")
   root "posts#index"
 end

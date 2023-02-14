@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
+  skip_before_action :record_page_view
   # GET /resource/confirmation/new
   # def new
   #   super
