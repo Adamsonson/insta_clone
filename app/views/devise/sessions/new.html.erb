@@ -2,7 +2,7 @@
   <div class="col-6", style="margin: auto; margin-top: 30px; margin-bottom: 30px">
     <h2>Log in</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, data: { turbo: false }, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>

@@ -53,6 +53,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'followability', github: 'nejdetkadir/followability', branch: 'main'
 gem 'ransack'
 gem 'rails_admin', '~> 3.0.0'
+gem 'pagy'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

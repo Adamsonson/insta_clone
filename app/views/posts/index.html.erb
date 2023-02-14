@@ -17,3 +17,9 @@
     <p> <%= link_to following.email, following %> </p>
   <% end %>
 <% end %>
+<p style="color: green"><%= notice %></p>
+<%= turbo_frame_tag :results, data: { turbo_action: 'advance' } do %>
+  <div id="posts"></div>
+  <%= turbo_frame_tag :pagination, loading: :lazy,
+                      src: posts_path(format: :turbo_stream) %>
+<% end %>
